@@ -1,11 +1,16 @@
-class Ship {
+class Ship extends GameObject {
     constructor() {
+        super()
         this.pos = createVector(width / 2, height / 2)
         this.rad = 20
         this.heading = 50
         this.rotation = 0
         this.vel = createVector(0, 0)
         this.isBoosting = false
+    }
+
+    getData() {
+        return [this.pos, this.heading]
     }
 
     boosting(b) {
@@ -22,12 +27,6 @@ class Ship {
         this.rotation = angle
     }
 
-    edges() {
-        if (this.pos.x > width + this.rad) this.pos.x = -this.rad
-        if (this.pos.x < -this.rad) this.pos.x = width + this.rad
-        if (this.pos.y > height + this.rad) this.pos.y = -this.rad
-        if (this.pos.y < -this.rad) this.pos.y = height + this.rad
-    }
 
     turn() {
         this.heading += this.rotation
@@ -43,7 +42,7 @@ class Ship {
         push()
           translate(this.pos.x, this.pos.y)
           rotate(this.heading + PI / 2)
-          noFill()
+          fill(15)
           stroke(255)
           triangle(
               -this.rad, this.rad,
