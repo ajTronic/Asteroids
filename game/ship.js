@@ -42,7 +42,7 @@ class Ship extends GameObject {
         push()
           translate(this.pos.x, this.pos.y)
           rotate(this.heading + PI / 2)
-          fill(15)
+          fill(20)
           stroke(255)
           triangle(
               -this.rad, this.rad,

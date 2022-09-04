@@ -3,14 +3,17 @@ class Torpedo extends GameObject {
         super()
         this.pos = createVector(pos.x, pos.y)
         this.vel = p5.Vector.fromAngle(angle)
-        this.vel.mult(5)
+        this.vel.mult(7)
         this.rad = 4
+        this.finished = false
     }
 
-    hits(asteroid) {
-        let d = dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid.pos.y)
-        if (d < asteroid.rad) return true
-        return false
+    isFinished() {
+        return this.finished
+    }
+
+    onEdge() {
+        this.finished = true
     }
 
     update() {
