@@ -1,10 +1,9 @@
 let ship;
 let asteroids = []
 let torpedos = []
-
 let lowpd = 0.7
 
-function setup() {
+window.setup = () => {
   createCanvas(windowWidth, windowHeight);
 
   ship = new Ship()
@@ -18,7 +17,7 @@ function setup() {
   strokeWeight(2)
 }
 
-function draw() {
+window.draw = () => {
   background(20);
 
   if (keyIsDown(RIGHT_ARROW)) ship.setRotation(0.1)
@@ -66,20 +65,21 @@ function draw() {
   })
 }
 
-function breakupAsteroid(asteroid) {
+const breakupAsteroid = (asteroid) => {
   if (asteroid.rad > 15) {
     const newAsteroids = asteroid.breakup()
     asteroids.push(...newAsteroids)
   }
 }
 
-function keyReleased() {
+window.keyReleased = () => {
   ship.setRotation(0)
   ship.boosting(false)
 }
 
-function keyTyped() {
-  if (key == " ") {
+window.keyTyped = (e) => {
+  e.preventDefault()
+  if (e.key == " ") {
     torpedos.push(new Torpedo(...ship.getData()))
   }
 }

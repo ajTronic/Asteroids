@@ -3,7 +3,7 @@ class Torpedo extends GameObject {
         super()
         this.pos = createVector(pos.x, pos.y)
         this.vel = p5.Vector.fromAngle(angle)
-        this.vel.mult(7)
+        this.vel.mult(10)
         this.rad = 4
         this.finished = false
     }
