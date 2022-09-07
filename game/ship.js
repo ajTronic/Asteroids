@@ -1,11 +1,12 @@
 import GameObject from "./gameobject.js"
+import controler from "./controls/controler.json" assert {type: "json"}
 
 class Ship extends GameObject {
     constructor() {
         super()
         this.pos = createVector(width / 2, height / 2)
-        this.rad = 20
-        this.heading = 50
+        this.rad = controler.ship.rad
+        this.heading = 0
         this.rotation = 0
         this.vel = createVector(0, 0)
         this.isBoosting = false
@@ -21,7 +22,7 @@ class Ship extends GameObject {
 
     boost() {
         const force = p5.Vector.fromAngle(this.heading)
-        force.mult(0.6)
+        force.mult(controler.ship.speed)
         this.vel.add(force)
     }
 
@@ -37,7 +38,7 @@ class Ship extends GameObject {
     update() {
         if (this.isBoosting) this.boost()
         this.pos.add(this.vel)
-        this.vel.mult(0.97)
+        this.vel.mult(controler.ship.slowdown)
     }
 
     render() {

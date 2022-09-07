@@ -1,12 +1,14 @@
 import GameObject from "./gameobject.js"
+import controler from "./controls/controler.json" assert {type: "json"}
 
 class Asteroid extends GameObject {
     constructor(pos, rad) {
         super()
         this.pos = pos ? pos.copy() : createVector(random(width), random(height))
         this.vel = p5.Vector.random2D()
+        this.vel.mult(controler.asteroid.speed)
         if (rad) this.rad = rad
-        else this.rad = random(15, 40)
+        else this.rad = random(controler.asteroid.minRad, controler.asteroid.maxRad)
 
         this.total = floor(random(5, 15))
         this.offset = []

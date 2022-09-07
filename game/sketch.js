@@ -1,8 +1,7 @@
 import Asteroid from "./asteroid.js"
 import Ship from "./ship.js"
 import Torpedo from "./torpedo.js"
-
-import Controler from "./controls/controler.json" assert {type: "json"}
+import controler from "./controls/controler.json" assert {type: "json"}
 
 let ship;
 let asteroids = []
@@ -10,8 +9,6 @@ let torpedos = []
 
 window.setup = () => {
   createCanvas(windowWidth, windowHeight);
-
-  console.log(Controler);
 
   ship = new Ship()
 
@@ -25,8 +22,8 @@ window.setup = () => {
 window.draw = () => {
   background(20);
 
-  if (keyIsDown(RIGHT_ARROW)) ship.setRotation(0.1)
-  if (keyIsDown(LEFT_ARROW)) ship.setRotation(-0.1)
+  if (keyIsDown(RIGHT_ARROW)) ship.setRotation(controler.ship.handling)
+  if (keyIsDown(LEFT_ARROW)) ship.setRotation(-controler.ship.handling)
   if (keyIsDown(UP_ARROW)) ship.boosting(true)
 
   for (let i = torpedos.length - 1; i >= 0; i--) {
