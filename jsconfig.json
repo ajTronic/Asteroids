@@ -2,6 +2,6 @@
   "include": [
     "*.js",
     "libraries/*.js",
-    "c:\\Users\\Alex\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.11\\p5types\\global.d.ts"
-, "src/asteroid.js"  ]
+    "c:\\Users\\zetta\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.11\\p5types\\global.d.ts"
+  ]
 }
