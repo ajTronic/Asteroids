@@ -37,3 +37,5 @@ class GameObject {
         return false
     }
 }
+
+export default GameObject

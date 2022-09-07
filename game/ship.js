@@ -1,3 +1,5 @@
+import GameObject from "./gameobject.js"
+
 class Ship extends GameObject {
     constructor() {
         super()
@@ -52,3 +54,5 @@ class Ship extends GameObject {
         pop()
     }
 }
+
+export default Ship

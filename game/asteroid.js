@@ -1,3 +1,5 @@
+import GameObject from "./gameobject.js"
+
 class Asteroid extends GameObject {
     constructor(pos, rad) {
         super()
@@ -41,3 +43,5 @@ class Asteroid extends GameObject {
         pop()
     }
 }
+
+export default Asteroid

@@ -1,3 +1,5 @@
+import GameObject from "./gameobject.js"
+
 class Torpedo extends GameObject {
     constructor(pos, angle) {
         super()

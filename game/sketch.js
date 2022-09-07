@@ -1,6 +1,10 @@
+import Asteroid from "./asteroid.js"
+import Ship from "./ship.js"
+
 let ship;
 let asteroids = []
 let torpedos = []
+let controls = null
 
 window.setup = () => {
   createCanvas(windowWidth, windowHeight);
