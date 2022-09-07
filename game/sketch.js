@@ -1,13 +1,17 @@
 import Asteroid from "./asteroid.js"
 import Ship from "./ship.js"
+import Torpedo from "./torpedo.js"
+
+import Controler from "./controls/controler.json" assert {type: "json"}
 
 let ship;
 let asteroids = []
 let torpedos = []
-let controls = null
 
 window.setup = () => {
   createCanvas(windowWidth, windowHeight);
+
+  console.log(Controler);
 
   ship = new Ship()
 

@@ -30,3 +30,5 @@ class Torpedo extends GameObject {
         pop()
     }
 }
+
+export default Torpedo
