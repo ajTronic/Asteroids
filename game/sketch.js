@@ -1,7 +1,6 @@
 let ship;
 let asteroids = []
 let torpedos = []
-let lowpd = 0.7
 
 window.setup = () => {
   createCanvas(windowWidth, windowHeight);
@@ -11,8 +10,6 @@ window.setup = () => {
   for (let i = 0; i < 10; i++) {
     asteroids.push(new Asteroid())
   }
-
-  pixelDensity(lowpd)
 
   strokeWeight(2)
 }
